@@ -36,32 +36,22 @@ export const Header = () => {
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
               <Link
-                to="/product"
+                to="/"
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Product
+                Home
               </Link>
             </li>
             <li>
               <Link
-                to="/features"
-                aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Features
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/Pricing"
+                to="/books"
                 aria-label="Product pricing"
                 title="Product pricing"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Pricing
+                Books
               </Link>
             </li>
             <li>
@@ -148,32 +138,22 @@ export const Header = () => {
                     <ul className="space-y-4">
                       <li>
                         <Link
-                          to="/product"
+                          to="/"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          Product
+                          Home
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/features"
+                          to="/books"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          Features
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/pricing"
-                          aria-label="Product pricing"
-                          title="Product pricing"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Pricing
+                          Books
                         </Link>
                       </li>
                       <li>
