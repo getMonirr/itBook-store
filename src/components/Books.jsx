@@ -12,7 +12,7 @@ const Books = () => {
   }
   // console.log(books);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto my-16">
       {books.map((book) => (
         <Book key={book.isbn13} book={book} />
       ))}
