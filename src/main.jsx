@@ -8,6 +8,7 @@ import Books from "./components/Books";
 import AboutUs from "./components/AboutUs";
 import BookDetails from "./components/BookDetails";
 import Loading from "./components/Loading";
+import OrderPage from "./components/OrderPage";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "about-us",
         element: <AboutUs />,
+      },
+      {
+        path: "orders",
+        element: <OrderPage />,
       },
       {
         path: "/spin",

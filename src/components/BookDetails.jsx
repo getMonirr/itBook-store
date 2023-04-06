@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import { Link, useLoaderData, useNavigation } from "react-router-dom";
+import {
+  Link,
+  useLoaderData,
+  useNavigate,
+  useNavigation,
+} from "react-router-dom";
 import Loading from "./Loading";
 
 const BookDetails = () => {
+  const navigate = useNavigate();
+
   const [read, setRead] = useState(true);
 
   const book = useLoaderData();
@@ -21,6 +28,7 @@ const BookDetails = () => {
   //   console.log(book);
 
   const { state } = useNavigation();
+
   if (state === "loading") {
     return <Loading />;
   }
@@ -74,6 +82,9 @@ const BookDetails = () => {
               <button className="btn btn-primary">Buy Now</button>
             </Link>
             <p className="text-white font-bold"> Price: {price}</p>
+            <button onClick={() => navigate(-1)} className="btn btn-primary">
+              Go Back
+            </button>
           </div>
         </div>
       </div>
