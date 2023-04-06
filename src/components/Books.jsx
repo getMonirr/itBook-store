@@ -3,7 +3,11 @@ import { useLoaderData, useNavigation } from "react-router-dom";
 import Book from "./Book";
 import Loading from "./Loading";
 import OrderPage from "./OrderPage";
-import { addToDb, getShoppingCart } from "../utilities/fakedb";
+import {
+  addToDb,
+  deleteShoppingCart,
+  getShoppingCart,
+} from "../utilities/fakedb";
 
 const Books = () => {
   const [bookCart, setBookCart] = useState([]);
@@ -39,6 +43,12 @@ const Books = () => {
     // console.log(shoppingCart);
     updateBookCart(shoppingCart);
   }, []);
+
+  // handleClearCart
+  const handleClearCart = () => {
+    deleteShoppingCart();
+    setBookCart([]);
+  };
   return (
     <div className="lg:grid grid-cols-5 container mx-auto gap-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto my-16 col-span-4">
@@ -51,7 +61,7 @@ const Books = () => {
         ))}
       </div>
       <div className="my-16">
-        <OrderPage bookCart={bookCart} />
+        <OrderPage bookCart={bookCart} handleClearCart={handleClearCart} />
       </div>
     </div>
   );

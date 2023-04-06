@@ -8,7 +8,8 @@ import Books from "./components/Books";
 import AboutUs from "./components/AboutUs";
 import BookDetails from "./components/BookDetails";
 import Loading from "./components/Loading";
-import OrderPage from "./components/OrderPage";
+import ReviewOrder from "./components/ReviewOrder";
+import { bookCartLoader } from "./Loader/bookCartLoader";
 
 const router = createBrowserRouter([
   {
@@ -35,8 +36,9 @@ const router = createBrowserRouter([
         element: <AboutUs />,
       },
       {
-        path: "orders",
-        element: <OrderPage />,
+        path: "review-order",
+        element: <ReviewOrder />,
+        loader: bookCartLoader,
       },
       {
         path: "/spin",
