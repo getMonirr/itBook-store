@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
+import Loading from "./Loading";
 
 const Book = ({ book }) => {
   const { title, subtitle, image, isbn13, price } = book;
+
   return (
     <Link to={`/books/${isbn13}`}>
       <div className="overflow-hidden relative shadow-lg group/item transition duration-200 transform hover:-translate-y-2">

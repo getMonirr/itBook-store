@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import Books from "./components/Books";
 import AboutUs from "./components/AboutUs";
 import BookDetails from "./components/BookDetails";
+import Loading from "./components/Loading";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "about-us",
         element: <AboutUs />,
+      },
+      {
+        path: "/spin",
+        element: <Loading />,
       },
     ],
   },

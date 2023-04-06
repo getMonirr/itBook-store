@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
+import Loading from "./Loading";
 
 const BookDetails = () => {
   const book = useLoaderData();
@@ -15,7 +16,12 @@ const BookDetails = () => {
     rating,
     url,
   } = book;
-  console.log(book);
+  //   console.log(book);
+
+  const { state } = useNavigation();
+  if (state === "loading") {
+    return <Loading />;
+  }
   return (
     <div className="container mx-auto w-2/3 items-center border border-gray-500 rounded-lg my-10">
       <div
