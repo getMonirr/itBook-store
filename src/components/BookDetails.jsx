@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const BookDetails = () => {
   const book = useLoaderData();
@@ -13,11 +13,15 @@ const BookDetails = () => {
     publisher,
     year,
     rating,
+    url,
   } = book;
   console.log(book);
   return (
     <div className="container mx-auto w-2/3 items-center border border-gray-500 rounded-lg my-10">
-      <div style={{alignItems: 'center'}} className="card lg:card-side bg-base-100 shadow-xl items-center justify-center">
+      <div
+        style={{ alignItems: "center" }}
+        className="card lg:card-side bg-base-100 shadow-xl items-center justify-center"
+      >
         <figure className="w-1/2">
           <img src={image} alt={title} />
         </figure>
@@ -34,8 +38,10 @@ const BookDetails = () => {
           </div>
           <h4>{desc}</h4>
           <div className="card-actions items-center gap-8">
-            <button className="btn btn-primary">Buy Now</button>
-            <p className="text-white font-bold">{price}</p>
+            <Link to={url}>
+              <button className="btn btn-primary">Buy Now</button>
+            </Link>
+            <p className="text-white font-bold"> Price: {price}</p>
           </div>
         </div>
       </div>
