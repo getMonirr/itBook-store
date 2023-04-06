@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import Loading from "./Loading";
 
 const BookDetails = () => {
+  const [read, setRead] = useState(true);
+
   const book = useLoaderData();
   const {
     title,
@@ -42,7 +44,31 @@ const BookDetails = () => {
             <p>Year: {year} </p>
             <p>Rating: {rating} </p>
           </div>
-          <h4>{desc}</h4>
+          {read ? (
+            <div>
+              <h4>
+                {desc.substring(0, 100)}{" "}
+                <span
+                  className="text-amber-400 cursor-pointer capitalize"
+                  onClick={() => setRead(!read)}
+                >
+                  read more
+                </span>
+              </h4>
+            </div>
+          ) : (
+            <div>
+              <h4>
+                {desc}{" "}
+                <span
+                  className="text-amber-400 cursor-pointer capitalize"
+                  onClick={() => setRead(!read)}
+                >
+                  read less
+                </span>
+              </h4>
+            </div>
+          )}
           <div className="card-actions items-center gap-8">
             <Link to={url}>
               <button className="btn btn-primary">Buy Now</button>
