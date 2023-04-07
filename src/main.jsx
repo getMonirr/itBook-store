@@ -10,11 +10,13 @@ import BookDetails from "./components/BookDetails";
 import Loading from "./components/Loading";
 import ReviewOrder from "./components/ReviewOrder";
 import { bookCartLoader } from "./Loader/bookCartLoader";
+import ErrorPage from "./components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
