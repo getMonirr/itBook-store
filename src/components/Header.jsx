@@ -46,7 +46,7 @@ export const Header = () => {
             </li>
             <li>
               <NavLink
-                to="/orders"
+                to="/review-order"
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
@@ -158,7 +158,7 @@ export const Header = () => {
                       </li>
                       <li>
                         <NavLink
-                          to="/orders"
+                          to="/review-order"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
